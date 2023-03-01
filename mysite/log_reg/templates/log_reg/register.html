@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+	
+{% block body %}
+	<section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="signup-form"><!--sign up form-->
+						<h2>New User Signup!</h2>
+						<form method="post">
+							{% csrf_token %}
+							<input type="text" name="username" placeholder="Username" id="">
+							<input type="email" name="email" placeholder="Email" id="">
+							<input type="password" name="password1" placeholder="Password" id="">
+							<input type="password" name="password2" placeholder="Confirm Password" id="">
+							<button type="submit">Register</button>
+						</form>
+					</div><!--/sign up form-->
+				</div>
+			</div>
+		</div>
+	</section><!--/form-->
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+	
+{% block body %}
+	<section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-1">
+					<div class="login-form"><!--login form-->
+						<h2>Login to your account</h2>
+						<form method="post">
+							{% csrf_token %}
+							<input type="text" name="username" placeholder="Username" id="">
+							<input type="password" id="pw" name="password" placeholder="Password">
+							<script type="text/javascript">
+								function reveal()
+								{
+								if(document.getElementById('box').checked)
+								   {document.getElementById("pw").type='text';}
+								else
+								document.getElementById("pw").type='password';
+								}
+								</script>  
+							<span> 
+								Show password <input type="checkbox" id="box" onclick ="reveal()">  
+							</span>
+							<button type="submit" class="btn btn-default">Login</button>
+						</form>
+					</div><!--/login form-->
+				</div>
+			</div>
+		</div>
+	</section><!--/form-->
+{% endblock %}
